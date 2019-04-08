@@ -1,35 +1,36 @@
 ﻿using System;
 
-namespace MethodsExercises
+namespace MethodExercises2
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            int firstDigits = int.Parse(Console.ReadLine());
-            int secondDigits = int.Parse(Console.ReadLine());
-            int thirdDigits = int.Parse(Console.ReadLine());
-
-            PrintSmallestDigit(firstDigits, secondDigits, thirdDigits);
-            Console.ReadLine();
+            string input = Console.ReadLine();
+            Console.WriteLine(VowelsCount(input));
         }
 
-        static void PrintSmallestDigit(int firstDigits, int secondDigits, int thirdDigits)
+        static int VowelsCount(string input)
         {
-            if (firstDigits < secondDigits && firstDigits < thirdDigits)
+            int vowelsCount = 0;
+            string inputToLower = input.ToLower();
+
+
+            for (int i = 0; i < inputToLower.Length; i++)
             {
-                Console.WriteLine(firstDigits);
+                if (inputToLower[i] == 'a' ||
+                    inputToLower[i] == 'o' ||
+                    inputToLower[i] == 'u' ||
+                    inputToLower[i] == 'e' ||
+                    inputToLower[i] == 'i' ||
+                    inputToLower[i] == 'y')
+                {
+                    vowelsCount++;
+                }
             }
-            else if (secondDigits < firstDigits && secondDigits < thirdDigits)
-            {
-                Console.WriteLine(secondDigits);
-            }
-            else 
-            {
-                Console.WriteLine(thirdDigits);
-            }
-                
+
+            return vowelsCount;
         }
+
     }
 }
