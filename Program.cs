@@ -1,36 +1,35 @@
 ﻿using System;
 
-namespace MethodExercises3
+namespace MethodsExercises
 {
     class Program
     {
         static void Main(string[] args)
         {
-            char firstChar = char.Parse(Console.ReadLine());
-            char secondChar = char.Parse(Console.ReadLine());
 
-            PrintCharBetweenTwo(firstChar, secondChar);
+            int firstDigits = int.Parse(Console.ReadLine());
+            int secondDigits = int.Parse(Console.ReadLine());
+            int thirdDigits = int.Parse(Console.ReadLine());
+
+            PrintSmallestDigit(firstDigits, secondDigits, thirdDigits);
             Console.ReadLine();
-
         }
 
-        static void PrintCharBetweenTwo(char firstChar, char secondChar)
+        static void PrintSmallestDigit(int firstDigits, int secondDigits, int thirdDigits)
         {
-            char temp = ' ';
-
-            if (firstChar>secondChar)
+            if (firstDigits < secondDigits && firstDigits < thirdDigits)
             {
-                temp = firstChar;
-                firstChar = secondChar;
-                secondChar = temp;
+                Console.WriteLine(firstDigits);
             }
-
-            for (int i = firstChar+1; i < secondChar; i++)
+            else if (secondDigits < firstDigits && secondDigits < thirdDigits)
             {
-                Console.Write((char)i+" ");
+                Console.WriteLine(secondDigits);
             }
-
+            else 
+            {
+                Console.WriteLine(thirdDigits);
+            }
+                
         }
-
     }
 }
