@@ -1,35 +1,35 @@
 ﻿using System;
 
-namespace MethodExercises2
+namespace MethodExercises3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            Console.WriteLine(VowelsCount(input));
+            char firstChar = char.Parse(Console.ReadLine());
+            char secondChar = char.Parse(Console.ReadLine());
+
+            PrintCharBetweenTwo(firstChar, secondChar);
+            Console.ReadLine();
+
         }
 
-        static int VowelsCount(string input)
+        static void PrintCharBetweenTwo(char firstChar, char secondChar)
         {
-            int vowelsCount = 0;
-            string inputToLower = input.ToLower();
+            char temp = ' ';
 
-
-            for (int i = 0; i < inputToLower.Length; i++)
+            if (firstChar>secondChar)
             {
-                if (inputToLower[i] == 'a' ||
-                    inputToLower[i] == 'o' ||
-                    inputToLower[i] == 'u' ||
-                    inputToLower[i] == 'e' ||
-                    inputToLower[i] == 'i' ||
-                    inputToLower[i] == 'y')
-                {
-                    vowelsCount++;
-                }
+                temp = firstChar;
+                firstChar = secondChar;
+                secondChar = temp;
             }
 
-            return vowelsCount;
+            for (int i = firstChar+1; i < secondChar; i++)
+            {
+                Console.Write((char)i+" ");
+            }
+
         }
 
     }
