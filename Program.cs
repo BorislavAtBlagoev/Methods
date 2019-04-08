@@ -1,0 +1,56 @@
+﻿using System;
+
+namespace MethodMoreExercise5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = int.Parse(Console.ReadLine());
+
+            IsNumsArePositiveNegativeOrZero(num1,num2,num3);
+            Console.ReadLine();
+
+        }
+
+        static void IsNumsArePositiveNegativeOrZero(int num1, int num2, int num3)
+        {
+            if ((num1*num2)>0)
+            {
+                if (num3>0)
+                {
+                    Console.WriteLine("positive");
+                }
+                else if (num3==0)
+                {
+                    Console.WriteLine("zero");
+                }
+                else if (num3<0)
+                {
+                    Console.WriteLine("negative");
+                }
+            }
+            else if ((num1*num2)<0)
+            {
+                if (num3>0)
+                {
+                    Console.WriteLine("negative");
+                }
+                else if (num3==0)
+                {
+                    Console.WriteLine("zero");
+                }
+                else if (num3<0)
+                {
+                    Console.WriteLine("positive");
+                }
+            }
+            else if ((num1 * num2) == 0)
+            {
+                Console.WriteLine("zero");
+            }
+        }
+    }
+}
